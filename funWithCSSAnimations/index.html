@@ -1,0 +1,960 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+
+  <title>reveal.js - The HTML Presentation Framework</title>
+
+  <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+  <meta name="author" content="Hakim El Hattab">
+
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="css/zenburn.css">
+
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section>
+  <h1>fun With CSS animations</h1>
+
+  <div class="fragment" data-fragment-index="0">Swooooshhh</div>
+
+  <div>Ryan Kahn</div>
+  <div>
+    <a href="https://twitter.com/Myztiq">@myztiq</a>
+  </div>
+  <div>
+    <a href="http://ryan-kahn.com">ryan-kahn.com</a>
+  </div>
+  <div>
+    <br>
+  </div>
+  <div>
+    <font color="#666666" style="font-size: 18px;">Don't forget to look down</font>
+  </div>
+  <img src="https://si0.twimg.com/profile_images/2364815629/j4rfwxpnqppqxujml2xn.png" class="absolute-element"
+       style="position: absolute; max-height: none; max-width: none; width: 207.72413793103448px; height: 251px; z-index: 4; left: 642px; top: 269px;">
+</section>
+<section data-background-color="rgba( 200, 50, 30, 0.6 )">
+  <h2>Animations vs Transitions</h2>
+
+  <div>
+    <br>
+  </div>
+  <div>Fight! Fight! Fight!</div>
+</section>
+<section data-background-color="rgba( 22, 152, 213, 0.6 )">
+  <h2>Animations</h2>
+
+  <div>
+    <br>
+  </div>
+  <div>Twists, twirls, transforms and tweens.&nbsp;</div>
+  <div class="fragment" data-fragment-index="0">Do that 4 times fast.&nbsp;</div>
+  <div class="fragment" data-fragment-index="1">In reverse.&nbsp;</div>
+  <div class="fragment" data-fragment-index="2">After waiting 1 second.&nbsp;</div>
+  <div class="fragment" data-fragment-index="3">And do it on a bezier curve.</div>
+</section>
+<section data-background-color="rgba( 50, 200, 90, 0.4 )">
+  <h2>Transitions</h2>
+
+  <div>Get into that state</div>
+  <div class="fragment" data-fragment-index="0">
+    <span style="font-size: 35.52150344848633px; font-style: normal; font-variant: normal;">Wait 2 seconds before starting</span>
+    <br>
+  </div>
+  <div class="fragment" data-fragment-index="1">
+    <span
+        style="font-size: 35.52150344848633px; font-style: normal; font-variant: normal;">Do it over 1.2 seconds</span>
+  </div>
+  <div class="fragment" data-fragment-index="2">
+    <span style="font-size: 35.52150344848633px; font-style: normal; font-variant: normal;">On a bezier curve</span>
+  </div>
+</section>
+<section>
+  <h2>Wait, What?</h2>
+
+  <div>Animations do stuff repeatedly</div>
+  <div>Transitions go from one state to another</div>
+</section>
+<section>
+  <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+    <h2>Transitions</h2>
+
+    <div>Our HTML&nbsp;
+      <pre><code>&lt;div class="foo"&gt;&lt;/div&gt;</code></pre>
+    </div>
+    <div>
+      Our CSS
+<pre><code>.foo{
+  height: 100px;
+  width: 100px;
+  background-color: red;
+}
+.foo:hover{
+  opacity: 0;
+  background-color: orange;
+  width: 200px;
+  height: 200px;
+}</code></pre>
+    </div>
+
+
+  </section>
+  <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+    <h2>In Action</h2>
+    <style>
+      #sample1{
+        opacity: 1;
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        margin: auto;
+        display: block;
+      }
+      #sample1:hover{
+        background-color: orange;
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+    <div id="sample1"></div>
+  </section>
+  <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+    <h2>The Syntax</h2>
+
+    <div>
+      <pre><code>transition: &lt;property&gt; || &lt;duration&gt; || &lt;timing-function&gt; || &lt;delay&gt; [,
+        ...];</code></pre>
+    </div>
+  </section>
+  <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+    <h2>A little transition</h2>
+
+    <div>
+<pre style="font-style: normal; font-variant: normal; width: 860.2211303710938px;"><code>.foo{
+  opacity: 1;
+  height: 100px;
+  width: 100px;
+  background-color: red;
+<div class="fragment" data-fragment-index="0">  transition: background-color 1s;</div>}
+.foo:hover{
+  background-color: orange;
+}
+</code></pre>
+    </div>
+  </section>
+  <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+    <h2>In action</h2>
+    <style>
+      #sample2{
+        opacity: 1;
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        margin: auto;
+        display: block;
+        transition: background-color 1s;
+      }
+      #sample2:hover{
+        background-color: orange;
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+    <div id="sample2"></div>
+  </section>
+  <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+    <h2>Multiple Properties</h2>
+    <div>
+      <pre><code>.foo{
+  transition: width 1s, background-color 2s;
+}</code></pre>
+    </div>
+  </section>
+  <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+    <h2>In Action</h2>
+    <style>
+      #sample3{
+        opacity: 1;
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        margin: auto;
+        display: block;
+        transition: width 1s, background-color 2s;
+      }
+      #sample3:hover{
+        background-color: orange;
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+    <div id="sample3"></div>
+
+  </section>
+  <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+    <h2>ALL Properties</h2>
+
+    <div>
+      <pre><code>.foo{</code><code> transition: all 2s;</code><code>}</code></pre>
+    </div>
+  </section>
+  <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+    <h2>In Action</h2>
+    <style>
+      #sample4{
+        opacity: 1;
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        margin: auto;
+        display: block;
+        transition: all 2s;
+      }
+      #sample4:hover{
+        background-color: orange;
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+    <div id="sample4"></div>
+  </section>
+</section>
+<section>
+  <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+    <h2>Can I transition that?</h2>
+
+    <div>
+      <br>
+    </div>
+    <div>
+      <font style="font-size: 24px;">
+        <a href="http://thewebevolved.com/support/animation/properties/" target="_blank">http://thewebevolved.com/support/animation/properties/</a>
+      </font>
+      <br>
+    </div>
+  </section>
+  <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+    <h2>Caveats</h2>
+
+    <div>"auto"</div>
+    <blockquote>Also the auto value is often a very complex case. The specification asks not to animate from and to such
+      a value.
+    </blockquote>
+    <div>
+      <br>
+    </div>
+    <div>"display:none", appendChild()</div>
+    <blockquote>Care should also be taken when using a transition immediately after adding the element to the DOM using
+      .appendChild() or removing its display: none; property
+    </blockquote>
+    <p>
+      <i style="font-size: 18px;">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_transitions" target="_blank">https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_transitions</a>
+      </i>
+      <br>
+    </p>
+  </section>
+</section>
+<section>
+  <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+    <h2>Getting Around "auto"</h2>
+
+    <div>An example:</div>
+    <div>
+      <div style="font-size: 36px; font-style: normal; font-variant: normal;">Our HTML&nbsp;<pre style="width: 860.390625px;"><code>&lt;div class="foo"&gt;Oh &lt;br&gt; Well &lt;br&gt; Hello &lt;br&gt; There&lt;/div&gt;</code></pre>
+      </div>
+      <div style="font-size: 36px; font-style: normal; font-variant: normal;">Our CSS
+    <pre style="width: 860.390625px;"><code>
+.foo{
+  height: 50px;
+  background-color: red;
+  transition: height 2s;
+  overflow: hidden;
+}
+.foo:hover{
+  height: auto;
+}
+    </code></pre>
+      </div>
+    </div>
+  </section>
+  <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+    <h2>In Action</h2>
+    <style>
+      #sample5{
+        height: 50px;
+        background-color: red;
+        transition: height 2s;
+        overflow: hidden;
+      }
+      #sample5:hover{
+        height: auto;
+      }
+    </style>
+    <div id="sample5">Oh <br> Well <br> Hello <br> There</div>
+
+  </section>
+  <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+    <h2>Well that did not work....</h2>
+
+    <div class="fragment" data-fragment-index="0">max-height to the rescue</div>
+    <div class="fragment" data-fragment-index="1">
+    <pre style="font-style: normal; font-variant: normal; width: 860.390625px;"><code>
+.foo{
+  height: auto;
+  background-color: red;
+  transition: max-height 2s;
+  max-height: 50px;
+  overflow: hidden;
+}
+.foo:hover{
+  max-height: 1000px;
+}
+    </code></pre>
+    </div>
+  </section>
+  <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+    <h2>In Action</h2>
+    <style>
+      #sample6{
+        height: auto;
+        background-color: red;
+        transition: max-height 2s;
+        max-height: 50px;
+        overflow: hidden;
+      }
+      #sample6:hover{
+        max-height: 1000px;
+      }
+    </style>
+    <div id="sample6">Oh <br> Well <br> Hello <br> There</div>
+  </section>
+  <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+    <h2>Problems</h2>
+
+    <div>
+      <br>
+    </div>
+    <div>
+      <span style="font-size: 36px; font-style: normal; font-variant: normal;">Timing is wrong</span>
+    </div>
+    <div>It's a hack. But... it works.</div>
+    <div>
+      <br>
+    </div>
+    <div>Live Example:</div>
+    <div>
+      <a href="http://www.ryan-kahn.com/" target="_blank">http://www.ryan-kahn.com/</a>
+      <br>
+    </div>
+  </section>
+</section>
+<section data-background-color="rgba( 50, 200, 90, 0.4 )">
+  <h2>Transition Options</h2>
+
+  <div>Examples of the different options</div>
+  <div>
+    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_transitions#CSS_properties_used_to_define_transitions">Mozilla CSS Transitions Guide</a>
+    <br>
+  </div>
+  <div>
+    <br>
+  </div>
+  <div>Bezier Builder</div>
+  <div>
+    <a target="_blank" href="http://www.roblaplaca.com/examples/bezierBuilder/">
+      http://www.roblaplaca.com/examples/bezierBuilder
+    </a>
+    <br>
+  </div>
+</section>
+<section data-background-color="rgba( 22, 152, 213, 0.6 )">
+  <h2>Show me the Animation</h2>
+
+  <div>
+    <div style="font-size: 36px; font-style: normal; font-variant: normal;">To the keyframes!</div>
+  </div>
+</section>
+<section>
+  <section data-background-color="rgba( 22, 152, 213, 0.6 )">
+    <h2>Keyframes</h2>
+
+    <div>Define a set of animation rules at particular times.</div>
+    <div>
+      <br>
+    </div>
+    <div>The most basic:</div>
+    <div>
+      <pre><code>
+@keyframes bounce{
+  from {
+    top: 0px;
+  }
+  to {
+    top: -10px;
+  }
+}
+      </code></pre>
+    </div>
+    <div>from and to are aliases to 0% and 100% respectively</div>
+  </section>
+  <section data-background-color="rgba( 22, 152, 213, 0.6 )">
+    <h2>
+      <span style="font-size: 64.566px;">KEYFRAMES</span>
+    </h2>
+
+    <div style="font-size: 36px; font-style: normal; font-variant: normal;">Working with percentages:</div>
+    <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+        <pre style="width: 860.390625px;"><code>
+@keyframes bounce{
+  0% {
+    top: 0px;
+  }
+  25%{
+    top: 2px;
+  }
+  50% {
+    top: -5px;
+  }
+  100% {
+    top: -10px;
+  }
+}
+        </code></pre>
+    </div>
+  </section>
+  <section data-background-color="rgba( 22, 152, 213, 0.6 )">
+    <h2>Feel the POWA!</h2>
+
+    <div>Finally, finite control over what happens.</div>
+    <div>
+      <br>
+    </div>
+    <div>On your schedule:</div>
+    <div>
+      <ul>
+        <li>
+          <span style="text-align: center;">Bounce around the page</span>
+          <br>
+        </li>
+        <li style="text-align: left;">Fade out</li>
+        <li style="text-align: left;">Change Color</li>
+        <li style="text-align: left;">Twist</li>
+      </ul>
+      <br>
+    </div>
+    <div>
+      <br>
+    </div>
+    <div>All in one keyframe that you can re-use.</div>
+    <div>
+      <br>
+    </div>
+  </section>
+  <section data-background-color="rgba( 22, 152, 213, 0.6 )">
+    <h2>Great, but how do I use it?</h2>
+
+    <div>
+      <div style="font-size: 36px; font-style: normal; font-variant: normal;">To animate!</div>
+    </div>
+  </section>
+</section>
+<section>
+<section data-background-color="rgba( 22, 152, 213, 0.6 )">
+  <h2>Animate</h2>
+
+  <div>Lets get it moving already...</div>
+</section>
+<section data-background-color="rgba( 22, 152, 213, 0.6 )">
+  <h2>
+    <span style="font-size: 64.566px;">THE SYNTAX</span>
+  </h2>
+
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <pre style="width: 860.390625px;"><code>animate: &lt;name&gt; || &lt;duration&gt; || &lt;timing-function&gt; || &lt;delay&gt; || &lt;iteration-count&gt;
+          || &lt;direction&gt; || &lt;fill-mode&gt; || &lt;play-state&gt; [, ...];</code></pre>
+  </div>
+  <div>Let's break that down</div>
+</section>
+<section data-background-color="rgba( 22, 152, 213, 0.6 )">
+  <h2>Name</h2>
+
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <pre style="width: 860.390625px;"><code>animate: <b>&lt;name&gt;</b> || &lt;duration&gt; || &lt;timing-function&gt; || &lt;delay&gt; || &lt;iteration-count&gt;
+          || &lt;direction&gt; || &lt;fill-mode&gt; || &lt;play-state&gt; [, ...];</code></pre>
+  </div>
+  <div>The name of the animation you are working with</div>
+</section>
+<section data-background-color="rgba( 22, 152, 213, 0.6 )">
+  <h2>
+    <span style="font-size: 64.566px;">Duration</span>
+  </h2>
+
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+        <pre style="width: 860.390625px;"><code>animate: &lt;name&gt; || <b>&lt;duration&gt;</b> || &lt;timing-function&gt; || &lt;delay&gt; || &lt;iteration-count&gt;
+              || &lt;direction&gt; || &lt;fill-mode&gt; || &lt;play-state&gt; [, ...];</code></pre>
+  </div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">How long a single cycle of your animation
+    should run&nbsp;</div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <br>
+  </div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">examples:</div>
+  <div>
+    <ul>
+      <li>0s&nbsp;<span style="font-size: 36px; font-style: normal; font-variant: normal;">&nbsp;(default)</span>
+      </li>
+      <li>2s</li>
+      <li>10s</li>
+      <li>100ms</li>
+    </ul>
+  </div>
+</section>
+<section data-background-color="rgba( 22, 152, 213, 0.6 )">
+  <h2>Timing Function</h2>
+
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <pre style="width: 860.390625px;"><code>animate: &lt;name&gt; || &lt;duration&gt; || <b>&lt;timing-function&gt;</b> || &lt;delay&gt; || &lt;iteration-count&gt;
+          || &lt;direction&gt; || &lt;fill-mode&gt; || &lt;play-state&gt; [, ...];</code></pre>
+  </div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">Define the easing or use a custom bezier
+    curve.
+  </div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <br>
+  </div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">examples:</div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <ul>
+      <li>
+        <span style="text-align: center;">ease</span>
+        <span style="font-size: 36px; font-style: normal; font-variant: normal;">&nbsp;(default)</span>
+      </li>
+      <li>
+        <span style="text-align: center;">ease-in</span>
+        <br>
+      </li>
+      <li>
+        <span style="text-align: center;">linear</span>
+        <br>
+      </li>
+      <li>
+        <span style="text-align: center;">cubic-bezier(.17,.67,.83,.67)</span>
+        <br>
+      </li>
+    </ul>
+  </div>
+</section>
+<section data-background-color="rgba( 22, 152, 213, 0.6 )">
+  <h2>Delay</h2>
+
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <pre style="width: 860.390625px;"><code>animate: &lt;name&gt; || &lt;duration&gt; || &lt;timing-function&gt; || <b>&lt;delay&gt;</b> || &lt;iteration-count&gt;
+          || &lt;direction&gt; || &lt;fill-mode&gt; || &lt;play-state&gt; [, ...];</code></pre>
+  </div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">How long to wait before starting to animate
+  </div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <br>
+  </div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">examples:</div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <ul>
+      <li>
+        <span style="text-align: center;">0s&nbsp;</span>
+        <span style="font-size: 36px; font-style: normal; font-variant: normal;">&nbsp;(default)</span>
+        <br>
+      </li>
+      <li>
+        <span style="font-size: 36px; font-style: normal; font-variant: normal;">2s</span>
+      </li>
+      <li>
+        <span style="text-align: center;">100ms</span>
+      </li>
+    </ul>
+  </div>
+</section>
+<section data-background-color="rgba( 22, 152, 213, 0.6 )">
+  <h2>Iteration Count</h2>
+
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <pre style="width: 860.390625px;"><code>animate: &lt;name&gt; || &lt;duration&gt; || &lt;timing-function&gt; || &lt;delay&gt; || <b>&lt;iteration-count&gt;</b>
+          || &lt;direction&gt; || &lt;fill-mode&gt; || &lt;play-state&gt; [, ...];</code></pre>
+  </div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">How many times to run</div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <br>
+  </div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">examples:</div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <ul>
+      <li>
+        <span style="text-align: center;">infinite</span>
+        <span style="font-size: 36px; font-style: normal; font-variant: normal;">&nbsp;(default)</span>
+        <br>
+      </li>
+      <li>
+        <span style="text-align: center;">2</span>
+      </li>
+      <li>
+        <span style="text-align: center;">1000</span>
+      </li>
+    </ul>
+  </div>
+</section>
+<section data-background-color="rgba( 22, 152, 213, 0.6 )">
+  <h2>Direction</h2>
+
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <pre style="width: 860.390625px;"><code>animate: &lt;name&gt; || &lt;duration&gt; || &lt;timing-function&gt; || &lt;delay&gt; || &lt;iteration-count&gt;
+          || <b>&lt;direction&gt;</b> || &lt;fill-mode&gt; || &lt;play-state&gt; [, ...];</code></pre>
+  </div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">Should the animation play in
+    reverse?&nbsp;</div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">Should we alternate?</div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <br>
+  </div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">examples:</div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <ul>
+      <li style="text-align: left;">normal<span style="font-size: 36px; font-style: normal; font-variant: normal;">&nbsp;(default)</span>
+      </li>
+      <li style="text-align: left;">reverse</li>
+      <li style="text-align: left;">alternate</li>
+      <li style="text-align: left;">alternate-reverse</li>
+    </ul>
+  </div>
+</section>
+<section data-background-color="rgba( 22, 152, 213, 0.6 )">
+  <h2>Fill Mode</h2>
+
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <pre style="width: 860.390625px;"><code>animate: &lt;name&gt; || &lt;duration&gt; || &lt;timing-function&gt; || &lt;delay&gt; || &lt;iteration-count&gt;
+          || &lt;direction&gt; || <b>&lt;fill-mode&gt;</b> || &lt;play-state&gt; [, ...];</code></pre>
+  </div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">What styles should be applied before and after
+    the animation?&nbsp;</div>
+  <div style="font-style: normal; font-variant: normal;" class="fragment" data-fragment-index="0">
+    <font style="font-size: 32px; background-color: rgb(204, 0, 0);" color="#ffffff">Defaulted to none at the cost of
+      many headaches.</font>
+  </div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <br>
+  </div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">examples:</div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <ul>
+      <li style="text-align: left;">none (default)</li>
+      <li style="text-align: left;">forwards</li>
+      <li style="text-align: left;">backwards</li>
+      <li style="text-align: left;">both</li>
+    </ul>
+  </div>
+</section>
+<section data-background-color="rgba( 22, 152, 213, 0.6 )">
+  <h2>Play State</h2>
+
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <pre style="width: 860.390625px;"><code>animate: &lt;name&gt; || &lt;duration&gt; || &lt;timing-function&gt; || &lt;delay&gt; || &lt;iteration-count&gt;
+          || &lt;direction&gt; || &lt;fill-mode&gt; || <b>&lt;play-state&gt;</b> [, ...];</code></pre>
+  </div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">Determine if the animation is running or
+    paused.
+  </div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <br>
+  </div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">examples:</div>
+  <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+    <ul>
+      <li style="text-align: left;">paused</li>
+      <li style="text-align: left;">running&nbsp;<span
+          style="font-size: 36px; font-style: normal; font-variant: normal;">&nbsp;(default)</span>
+      </li>
+    </ul>
+  </div>
+</section>
+</section>
+<section data-background-color="rgba( 22, 152, 213, 0.6 )">
+  <h2>What about support?</h2>
+  <h3>Vendor Prefixes</h3>
+  Only need -webkit for coverage 2 browser versions back. 7 if you exclude opera.
+  <pre><code>
+    @keyframes bounce{from:{top: 0px} to:{ top: 20px; }}
+    @-webkit-keyframes bounce{from:{top: 0px} to:{ top: 20px; }}
+  </code></pre>
+  <pre><code>
+  .foo {
+    -webkit-animation: bounce 1s ease-in-out;
+    animation: bounce 1s ease-in-out;
+  }
+   </code></pre>
+</section>
+<section>
+  <section data-background-color="rgba( 22, 152, 213, 0.6 )">
+    <h2>Show me the examples</h2>
+  </section>
+  <section data-background-color="rgba( 22, 152, 213, 0.6 )">
+    <style>
+      @keyframes bounce{
+        0% {
+          top: 0px;
+        }
+        25%{
+          top: 2px;
+        }
+        50% {
+          top: -5px;
+        }
+        100% {
+          top: -10px;
+        }
+      }
+      @-webkit-keyframes bounce{
+        0% {
+          top: 0px;
+        }
+        25%{
+          top: 20px;
+        }
+        50% {
+          top: -50px;
+        }
+        100% {
+          top: -100px;
+        }
+      }
+      #sample7{
+        position: relative;
+        animation: bounce 1s infinite;
+        -webkit-animation: bounce 1s infinite alternate;
+        background-color: red;
+      }
+    </style>
+    <pre><code>
+@keyframes bounce{
+  0% {
+    top: 0px;
+  }
+  25%{
+    top: 2px;
+  }
+  50% {
+    top: -5px;
+  }
+  100% {
+    top: -10px;
+  }
+}
+.foo{
+  position: relative;
+  animation: bounce 1s infinite;
+  background-color: red;
+}
+    </code></pre>
+    <div id="sample7">Bouncy</div>
+  </section>
+  <section data-background-color="rgba( 22, 152, 213, 0.6 )">
+    <h2>Oh Hey look at those links</h2>
+    <a href="http://lab.tylergaw.com/themanfromhollywood/" target="_blank">The Man From Hollywood</a>
+    <br>
+    <a target="_blank"href="http://anthonycalzadilla.com/css3-ATAT/index.html">AT Walker</a>
+    <br>
+    <a target="_blank" href="http://cordobo.com/wp-content/uploads/pure-css-animated-3d-super-mario/">Super Mario 3D</a>
+    <br>
+    <a target="_blank" href="http://monster.simurai.com/">Cursor Monster</a>
+    <br>
+    <a target="_blank" href="http://demo.marcofolio.net/css3_helix/">3D Helix</a>
+    <br>
+    <a target="_blank" href="http://www.alessioatzeni.com/wp-content/tutorials/html-css/CSS3-Graph-Animation/index.html">Graph Animation</a>
+  </section>
+</section>
+<section>
+  <h2>What about performance?</h2>
+
+  <div>CSS3 Transition VS JQuery Animate:</div>
+  <div>&nbsp;<a href="http://goo.gl/NdnIu">http://goo.gl/NdnIu</a>
+    <br>
+  </div>
+  <div>
+    <br>
+  </div>
+  <div class="fragment" data-fragment-index="0">Why?
+    <div>
+      <ul>
+        <li>
+          <span style="text-align: center;">Native</span>
+          <br>
+        </li>
+        <li>
+          <span style="text-align: center;">GPU Accelerated (sometimes)</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section>
+  <h2>What about compatibility?</h2>
+
+  <div>
+    <br>
+  </div>
+  <div>
+    <a href="http://caniuse.com/css-transitions">http://caniuse.com/css-transitions</a>
+  </div>
+  <div>
+    <a href="http://caniuse.com/css-animation">http://caniuse.com/css-animation</a>
+    <br>
+  </div>
+  <div>
+    <br>
+  </div>
+  <div>If your animation is *required* you are doing it wrong.</div>
+</section>
+<section data-background-color="rgba( 180, 50, 140, 0.6 )">
+  <h2>But I like JQuery!</h2>
+
+  <div class="fragment" data-fragment-index="0">Remember having to do .stop(true,true) in order to prevent this from
+    happening?
+  </div>
+  <div class="fragment" data-fragment-index="1">No more.</div>
+</section>
+<section>
+  <section data-background-color="rgba( 180, 50, 140, 0.6 )">
+    <h2>But I want to use JQuery</h2>
+
+    <div class="fragment" data-fragment-index="0">Toggle a class and use your animation on that!
+      <div>
+        <pre><code> $('.foo').on('click',function(){$('.foo').toggleClass('active')})</code></pre>
+      </div>
+
+    </div>
+  </section>
+  <section data-background-color="rgba( 180, 50, 140, 0.6 )">
+    <h2>Javascript + Css3</h2>
+
+    <div>The world is your oyster</div>
+    <div>
+      <br>
+    </div>
+    <div>I want to do something after the transition finishes...</div>
+  </section>
+  <section data-background-color="rgba( 180, 50, 140, 0.6 )">
+    <h2>Enter css3 events</h2>
+
+    <div>
+      <pre><code>$('.foo').on('transitionend', function(){</code><code> alert('Transition over!');</code><code>})</code></pre>
+    </div>
+    <div>Browser specific implementations:</div>
+    <div>
+      <ul>
+        <li>
+          <span style="text-align: center;">webkitTransitionEnd</span>
+          <br>
+        </li>
+        <li>
+          <span style="text-align: center;">otransitionend</span>
+          <br>
+        </li>
+        <li>
+          <span style="text-align: center;">oTransitionEnd</span>
+          <br>
+        </li>
+        <li>
+          <span style="text-align: center;">msTransitionEnd</span>
+          <br>
+        </li>
+        <li>
+          <span style="text-align: center;">transitionend</span>
+          <br>
+        </li>
+      </ul>
+      <div>
+        <font style="font-size: 18px;">
+          <a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/transitionend">https://developer.mozilla.org/en-US/docs/Web/Reference/Events/transitionend</a>
+        </font>
+        <br>
+      </div>
+    </div>
+  </section>
+  <section data-background-color="rgba( 180, 50, 140, 0.6 )">
+    <h2 style="font-style: normal; font-variant: normal;">Moar Events!</h2>
+
+    <div>
+      <div style="font-size: 36px; font-style: normal; font-variant: normal;">
+        <pre style="width: 860.390625px;">
+    <code>$('.foo').on('animationend', function(){</code>
+            <code> alert('Animation over!');</code>
+            <code>})</code>
+</pre>
+      </div>
+      <div style="font-size: 36px; font-style: normal; font-variant: normal;">Browser specific implementations:</div>
+      <div>
+        <ul>
+          <li style="text-align: left;">webkitAnimationEnd</li>
+          <li style="text-align: left;">oanimationend</li>
+          <li style="text-align: left;">msAnimationEnd</li>
+          <li style="text-align: left;">animationend</li>
+
+        </ul>
+      </div>
+    </div>
+    <div>
+      <font style="font-size: 18px;">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/animationend">https://developer.mozilla.org/en-US/docs/Web/Reference/Events/animationend</a>
+      </font>
+    </div>
+  </section>
+  <section data-background-color="rgba( 180, 50, 140, 0.6 )">
+    <h2>What does that give me?</h2>
+
+    <div>Maintainability:</div>
+    <div>Timing is in one spot</div>
+    <div>
+      <br>
+    </div>
+    <div>Separation of concerns:</div>
+    <div>
+      <span>CSS acts.&nbsp;</span>Javascript reacts.
+    </div>
+  </section>
+</section>
+<section>
+  <h2>Out of time. :(</h2>
+  <h3>Questions?</h3>
+  <br>
+  <br>
+  Website: <a href="http://ryan-kahn.com" target="_blank">http://ryan-kahn.com</a>
+  <br>
+  Twitter: <a href="http://twitter.com/myztiq">@Myztiq</a>
+  <br>
+  These Slides: <a href="http://ryan-kahn.com/slides">http://ryan-kahn.com/slides</a>
+</section>
+</div>
+
+</div>
+
+
+<script type="text/javascript" src="js/head.min.js"></script>
+<script type="text/javascript" src="js/reveal.min.js"></script>
+<script>
+  Reveal.initialize({
+    history: true
+  })
+</script>
+</body>
+</html>
